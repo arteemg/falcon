@@ -260,63 +260,6 @@
             font-size: 0.95em;
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 45px 35px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), #8b5cf6);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .feature-title {
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .feature-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
         /* Abstract Section */
         .abstract-box {
             background: var(--bg-card);
@@ -342,44 +285,6 @@
             font-size: 1.2em;
             line-height: 1.9;
             color: var(--text-secondary);
-        }
-
-        /* Steps Section */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 80px;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent), #8b5cf6);
-            border-radius: 50%;
-            font-size: 2em;
-            font-weight: 800;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-        }
-
-        .step-title {
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .step-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
         }
 
         /* Citation */
@@ -506,7 +411,6 @@
             <div class="logo">FALCON</div>
             <div class="nav-links">
                 <a href="#abstract">Abstract</a>
-                <a href="#features">Features</a>
                 <a href="#citation">Citation</a>
             </div>
         </div>
@@ -551,77 +455,6 @@
             <div class="abstract-box">
                 <div class="abstract-content">
                     Scalable sampling of molecular states in thermodynamic equilibrium is a long-standing challenge in statistical physics. Boltzmann Generators tackle this problem by pairing a generative model, capable of exact likelihood computation, with importance sampling to obtain consistent samples under the target distribution. Current Boltzmann Generators primarily use continuous normalizing flows (CNFs) trained with flow matching for efficient training of powerful models. However, likelihood calculation for these models is extremely costly, requiring thousands of function evaluations per sample, severely limiting their adoption. In this work, we propose Few-step Accurate Likelihoods for Continuous Flows (FALCON), a method which allows for few-step sampling with a likelihood accurate enough for importance sampling applications by introducing a hybrid training objective that encourages invertibility.
-                </div>
-            </div>
-        </section>
-
-        <section id="features">
-            <div class="section-header">
-                <h2 class="section-title">Key Contributions</h2>
-                <p class="section-description">
-                    FALCON introduces breakthrough improvements in continuous normalizing flows for molecular sampling
-                </p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3 class="feature-title">Few-step Sampling</h3>
-                    <p class="feature-description">
-                        Dramatically reduces function evaluations from thousands to just a few steps, making Boltzmann Generators practical for real-world applications.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🎯</span>
-                    <h3 class="feature-title">Accurate Likelihoods</h3>
-                    <p class="feature-description">
-                        Maintains likelihood accuracy sufficient for importance sampling through a novel hybrid training objective.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🔬</span>
-                    <h3 class="feature-title">Statistical Physics</h3>
-                    <p class="feature-description">
-                        Addresses the computational bottleneck in sampling molecular states in thermodynamic equilibrium.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🔄</span>
-                    <h3 class="feature-title">Invertibility</h3>
-                    <p class="feature-description">
-                        Introduces training objectives that encourage model invertibility for improved flow performance.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-header">
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-description">
-                    Three key innovations that make FALCON effective
-                </p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Hybrid Training</h3>
-                    <p class="step-description">
-                        Combines flow matching with invertibility constraints to maintain accuracy while reducing steps.
-                    </p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Efficient Likelihood</h3>
-                    <p class="step-description">
-                        Computes exact likelihoods with minimal function evaluations through optimized flow design.
-                    </p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Importance Sampling</h3>
-                    <p class="step-description">
-                        Enables consistent sampling under target distributions for molecular physics applications.
-                    </p>
                 </div>
             </div>
         </section>
@@ -710,13 +543,6 @@
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
     </script>
 </body>
 </html>
