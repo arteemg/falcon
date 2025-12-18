@@ -425,8 +425,24 @@
         
         <div class="authors">
             <div class="author">
-                <div class="author-name"><a href="#">Author Names</a></div>
-                <div class="author-affiliation">Institution</div>
+                <div class="author-name"><a href="#">Danyal Rehman</a></div>
+                <div class="author-affiliation">Mila, Université de Montréal</div>
+            </div>
+            <div class="author">
+                <div class="author-name"><a href="#">Tara Akhound-Sadegh</a></div>
+                <div class="author-affiliation">Mila, Université de Montréal</div>
+            </div>
+            <div class="author">
+                <div class="author-name"><a href="#">Artem Gazizov</a></div>
+                <div class="author-affiliation">Mila, Université de Montréal</div>
+            </div>
+            <div class="author">
+                <div class="author-name"><a href="#">Yoshua Bengio</a></div>
+                <div class="author-affiliation">Mila, Université de Montréal</div>
+            </div>
+            <div class="author">
+                <div class="author-name"><a href="#">Alexander Tong</a></div>
+                <div class="author-affiliation">Mila, Université de Montréal</div>
             </div>
         </div>
 
@@ -454,7 +470,7 @@
             </div>
             <div class="abstract-box">
                 <div class="abstract-content">
-                    Scalable sampling of molecular states in thermodynamic equilibrium is a long-standing challenge in statistical physics. Boltzmann Generators tackle this problem by pairing a generative model, capable of exact likelihood computation, with importance sampling to obtain consistent samples under the target distribution. Current Boltzmann Generators primarily use continuous normalizing flows (CNFs) trained with flow matching for efficient training of powerful models. However, likelihood calculation for these models is extremely costly, requiring thousands of function evaluations per sample, severely limiting their adoption. In this work, we propose Few-step Accurate Likelihoods for Continuous Flows (FALCON), a method which allows for few-step sampling with a likelihood accurate enough for importance sampling applications by introducing a hybrid training objective that encourages invertibility.
+                    Scalable sampling of molecular states in thermodynamic equilibrium is a long-standing challenge in statistical physics. Boltzmann Generators tackle this problem by pairing a generative model, capable of exact likelihood computation, with importance sampling to obtain consistent samples under the target distribution. Current Boltzmann Generators primarily use continuous normalizing flows (CNFs) trained with flow matching for efficient training of powerful models. However, likelihood calculation for these models is extremely costly, requiring thousands of function evaluations per sample, severely limiting their adoption. In this work, we propose Few-step Accurate Likelihoods for Continuous Flows (FALCON), a method which allows for few-step sampling with a likelihood accurate enough for importance sampling applications by introducing a hybrid training objective that encourages invertibility. We show FALCON outperforms state-of-the-art normalizing flow models for molecular Boltzmann sampling and is two orders of magnitude faster than the equivalently performing CNF model.
                 </div>
             </div>
         </section>
@@ -465,11 +481,12 @@
                 <p style="color: var(--text-secondary); margin-bottom: 25px;">
                     If you find this work useful in your research, please consider citing:
                 </p>
-                <pre><code>@article{falcon2024,
+                <pre><code>@article{rehman2024falcon,
   title={FALCON: Few-step Accurate Likelihoods for Continuous Flows},
-  author={[Author names]},
+  author={Rehman, Danyal and Akhound-Sadegh, Tara and Gazizov, Artem and Bengio, Yoshua and Tong, Alexander},
   journal={arXiv preprint arXiv:2512.09914},
-  year={2024}
+  year={2024},
+  note={NeurIPS 2025 MLSB}
 }</code></pre>
                 <button class="copy-btn" onclick="copyCitation()">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -493,11 +510,12 @@
 
     <script>
         function copyCitation() {
-            const citation = `@article{falcon2024,
+            const citation = `@article{rehman2024falcon,
   title={FALCON: Few-step Accurate Likelihoods for Continuous Flows},
-  author={[Author names]},
+  author={Rehman, Danyal and Akhound-Sadegh, Tara and Gazizov, Artem and Bengio, Yoshua and Tong, Alexander},
   journal={arXiv preprint arXiv:2512.09914},
-  year={2024}
+  year={2024},
+  note={NeurIPS 2025 MLSB}
 }`;
             
             navigator.clipboard.writeText(citation).then(() => {
