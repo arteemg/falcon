@@ -337,6 +337,203 @@
             transform: translateY(-2px);
         }
 
+        /* Blog / Background Content Styles */
+        .blog-section {
+            padding: 80px 0;
+        }
+
+        .blog-section + .blog-section {
+            padding-top: 0;
+        }
+
+        .blog-section .section-header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .blog-section .section-title {
+            font-size: 2.5em;
+        }
+
+        .blog-prose {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            max-width: 900px;
+        }
+
+        .blog-prose p {
+            margin-bottom: 24px;
+        }
+
+        .blog-prose p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-prose strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .blog-prose a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .blog-prose a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Highlight cards for key concepts */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .concept-card:hover {
+            border-color: #404040;
+            transform: translateY(-3px);
+        }
+
+        .concept-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .concept-card h4 {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .concept-card p {
+            color: var(--text-secondary);
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* Divider */
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 20px 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent), #8b5cf6, var(--accent));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 36px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -45px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+        }
+
+        .timeline-year {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 1em;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Key result highlight */
+        .result-highlight {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 36px 40px;
+            margin: 40px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .result-highlight-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result-highlight p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .result-highlight strong {
+            color: var(--text-primary);
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--border);
@@ -370,12 +567,20 @@
                 font-size: 2.5em;
             }
 
+            .blog-section .section-title {
+                font-size: 2em;
+            }
+
             .container {
                 padding: 0 20px;
             }
 
             section {
                 padding: 60px 0;
+            }
+
+            .blog-section {
+                padding: 50px 0;
             }
 
             .abstract-box {
@@ -388,6 +593,14 @@
 
             .nav-links {
                 display: none;
+            }
+
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-highlight {
+                flex-direction: column;
             }
         }
 
@@ -411,6 +624,9 @@
             <div class="logo">FALCON</div>
             <div class="nav-links">
                 <a href="#abstract">Abstract</a>
+                <a href="#background">Background</a>
+                <a href="#method">Method</a>
+                <a href="#results">Results</a>
                 <a href="#citation">Citation</a>
             </div>
         </div>
@@ -459,6 +675,7 @@
     </div>
 
     <div class="container">
+        <!-- Abstract -->
         <section id="abstract">
             <div class="section-header">
                 <h2 class="section-title">Abstract</h2>
@@ -470,6 +687,188 @@
             </div>
         </section>
 
+        <hr class="section-divider">
+
+        <!-- Background: The Problem -->
+        <section id="background" class="blog-section">
+            <div class="section-header">
+                <h2 class="section-title">The Sampling Problem</h2>
+            </div>
+            <div class="blog-prose">
+                <p>
+                    Understanding the behavior of molecules — how proteins fold, how drugs bind to receptors, how materials respond to stress — requires knowing the distribution of molecular configurations at thermal equilibrium. This distribution, known as the <strong>Boltzmann distribution</strong>, assigns a probability to every possible arrangement of atoms based on its energy: lower-energy states are exponentially more likely. In principle, the Boltzmann distribution tells us everything we'd want to know about a molecular system's thermodynamic properties.
+                </p>
+                <p>
+                    In practice, sampling from this distribution is extraordinarily difficult. The configuration space of even a modest-sized molecule is astronomically large and filled with deep energy basins separated by high barriers. Traditional approaches like <strong>Molecular Dynamics (MD)</strong> and <strong>Monte Carlo (MC)</strong> simulations explore this landscape step by step, but they can take an impractically long time to transition between important states — a problem known as <strong>rare-event sampling</strong>. A simulation of a protein might need milliseconds of physical time to observe a single folding event, which can require months of wall-clock computation on specialized hardware.
+                </p>
+                <p>
+                    This bottleneck has been one of the most persistent challenges in computational chemistry and statistical physics for over half a century, motivating decades of work on enhanced sampling techniques such as replica exchange, metadynamics, and umbrella sampling. While these methods have enabled many scientific breakthroughs, they each come with their own limitations and remain impractical for the largest systems of interest.
+                </p>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="blog-section">
+            <div class="section-header">
+                <h2 class="section-title">Why It Matters</h2>
+            </div>
+            <div class="blog-prose">
+                <p>
+                    Fast, accurate sampling of equilibrium molecular configurations has implications across a wide range of scientific and industrial domains. The ability to rapidly generate representative samples from the Boltzmann distribution would be transformative for many fields.
+                </p>
+            </div>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-card-icon">💊</div>
+                    <h4>Drug Discovery</h4>
+                    <p>Computing binding free energies between drug candidates and protein targets is essential for rational drug design. Faster sampling would dramatically accelerate the hit-to-lead pipeline by enabling more accurate and rapid evaluation of candidate molecules.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-card-icon">🧬</div>
+                    <h4>Protein Engineering</h4>
+                    <p>Understanding how mutations affect protein stability and function requires sampling conformational ensembles. Efficient Boltzmann sampling enables rapid screening of designed protein variants and prediction of their thermodynamic properties.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-card-icon">🔬</div>
+                    <h4>Materials Science</h4>
+                    <p>Predicting phase transitions, mechanical properties, and defect formation energies in novel materials relies on thermodynamic averages over atomic configurations — all of which demand efficient equilibrium sampling.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-card-icon">🌡️</div>
+                    <h4>Free Energy Calculations</h4>
+                    <p>Free energy differences govern chemical equilibria, reaction rates, and phase behavior. Direct estimation from generative samples — rather than expensive alchemical simulations — could make these calculations routine and accessible.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- History / Timeline of Advances -->
+        <section class="blog-section">
+            <div class="section-header">
+                <h2 class="section-title">A Brief History</h2>
+            </div>
+            <div class="blog-prose">
+                <p>
+                    The idea of using deep generative models to directly learn and sample from the Boltzmann distribution has evolved rapidly over the past several years, building on foundational work in both machine learning and statistical mechanics.
+                </p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-title">Boltzmann Generators Introduced</div>
+                    <div class="timeline-desc">Noé et al. proposed Boltzmann Generators, demonstrating that normalizing flows could learn to map a simple prior distribution to the complex Boltzmann distribution of molecular systems. Crucially, the exact likelihood provided by normalizing flows enabled importance sampling to correct any approximation errors, yielding asymptotically unbiased samples.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020–2022</div>
+                    <div class="timeline-title">Scaling with Equivariant Architectures</div>
+                    <div class="timeline-desc">Subsequent work introduced equivariant normalizing flows and improved coupling layers designed to respect the physical symmetries of molecular systems (rotational, translational, and permutational invariance), enabling Boltzmann Generators to scale to larger and more realistic molecules.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022–2023</div>
+                    <div class="timeline-title">Flow Matching & Continuous Normalizing Flows</div>
+                    <div class="timeline-desc">The development of flow matching training objectives made it practical to train continuous normalizing flows (CNFs) — far more expressive models than discrete coupling-layer flows. CNFs trained with flow matching quickly became the state-of-the-art backbone for Boltzmann Generators, delivering superior sample quality.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-title">The Likelihood Bottleneck Emerges</div>
+                    <div class="timeline-desc">While CNFs produce excellent samples, computing their likelihoods requires solving an ODE both forward and backward, needing thousands of neural network evaluations per sample. This made the importance sampling reweighting step — essential for unbiased estimation — prohibitively expensive, limiting the practical utility of CNF-based Boltzmann Generators.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-title">FALCON</div>
+                    <div class="timeline-desc">FALCON resolves this bottleneck by enabling few-step sampling with accurate likelihoods, making CNF-level quality achievable at a fraction of the computational cost — bringing practical, scalable Boltzmann Generation within reach.</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- How FALCON Works -->
+        <section id="method" class="blog-section">
+            <div class="section-header">
+                <h2 class="section-title">How FALCON Works</h2>
+            </div>
+            <div class="blog-prose">
+                <p>
+                    At its core, FALCON addresses the tension between two competing goals: generating high-quality molecular samples (which CNFs do very well) and computing accurate likelihoods cheaply (which CNFs do very poorly). The key insight is that likelihood accuracy depends critically on a model's <strong>invertibility</strong> — the consistency between its forward (generative) and backward (encoding) passes.
+                </p>
+                <p>
+                    Standard CNFs are trained only in the forward direction with flow matching, so their forward and backward trajectories can diverge when evaluated with a limited number of integration steps. FALCON introduces a <strong>hybrid training objective</strong> that jointly optimizes sample quality and trajectory invertibility. By encouraging the learned vector field to be easily reversible under coarse numerical integration, FALCON ensures that the likelihood computed with just a handful of ODE steps closely approximates the true model likelihood.
+                </p>
+                <p>
+                    This means that at inference time, FALCON can generate a sample and compute its importance weight using only a small number of function evaluations — typically orders of magnitude fewer than a standard CNF — without sacrificing the accuracy needed for consistent Boltzmann sampling.
+                </p>
+            </div>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h4>Hybrid Training Objective</h4>
+                    <p>Combines flow matching for sample quality with an invertibility-encouraging loss that ensures forward and backward ODE trajectories remain consistent under few-step integration.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h4>Few-step Likelihood</h4>
+                    <p>Accurate log-likelihood computation with as few as 5–10 ODE steps instead of thousands, enabling practical importance sampling reweighting at minimal cost.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Consistent Boltzmann Sampling</h4>
+                    <p>Importance weights derived from accurate likelihoods guarantee that downstream thermodynamic estimates converge to the correct values — preserving statistical rigor.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Key Results -->
+        <section id="results" class="blog-section">
+            <div class="section-header">
+                <h2 class="section-title">Key Results</h2>
+            </div>
+            <div class="blog-prose">
+                <p>
+                    FALCON was evaluated on standard molecular Boltzmann sampling benchmarks, including alanine dipeptide and larger peptide systems. The results demonstrate that FALCON not only matches but surpasses the sample quality of existing normalizing flow architectures while being dramatically faster at producing importance-weighted samples.
+                </p>
+            </div>
+
+            <div class="result-highlight">
+                <div class="result-highlight-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                </div>
+                <p>
+                    <strong>100× faster</strong> — FALCON achieves importance-weighted sample quality comparable to a full CNF model while requiring roughly two orders of magnitude fewer function evaluations, making it practical for real-world molecular sampling tasks.
+                </p>
+            </div>
+
+            <div class="result-highlight">
+                <div class="result-highlight-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p>
+                    <strong>State-of-the-art quality</strong> — On molecular benchmarks, FALCON outperforms existing normalizing flow baselines in effective sample size and thermodynamic observable estimation, setting a new standard for Boltzmann Generators.
+                </p>
+            </div>
+
+            <div class="result-highlight">
+                <div class="result-highlight-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <p>
+                    <strong>Reliable importance weights</strong> — The hybrid training objective ensures that few-step likelihoods are accurate enough for importance sampling, meaning FALCON samples can be used directly for unbiased free energy estimation and ensemble average computation.
+                </p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Citation -->
         <section id="citation">
             <div class="citation-box">
                 <h3>Citation</h3>
