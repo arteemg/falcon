@@ -813,7 +813,7 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     </div>
                     <h4>Few-step Likelihood</h4>
-                    <p>Accurate log-likelihood computation with as few as 5–10 ODE steps instead of thousands, enabling practical importance sampling reweighting at minimal cost.</p>
+                    <p>Accurate log-likelihood computation with as few as 4–16 ODE steps (depending on molecule size) instead of hundreds required by adaptive solvers, enabling practical importance sampling reweighting at minimal cost.</p>
                 </div>
                 <div class="concept-card">
                     <div class="concept-card-icon">
@@ -834,7 +834,7 @@
             </div>
             <div class="blog-prose">
                 <p>
-                    FALCON was evaluated on standard molecular Boltzmann sampling benchmarks, including alanine dipeptide and larger peptide systems. The results demonstrate that FALCON not only matches but surpasses the sample quality of existing normalizing flow architectures while being dramatically faster at producing importance-weighted samples.
+                    FALCON was evaluated on standard molecular Boltzmann sampling benchmarks, including alanine dipeptide, tri-alanine, alanine tetrapeptide, and hexa-alanine. While existing continuous flows like ECNF++ perform well on smaller systems such as alanine dipeptide, they fail to scale to larger molecules. FALCON demonstrates superior scalability, outperforming all baselines on larger peptide systems while being dramatically faster at producing importance-weighted samples.
                 </p>
             </div>
 
@@ -852,7 +852,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 </div>
                 <p>
-                    <strong>State-of-the-art quality</strong> — On molecular benchmarks, FALCON outperforms existing normalizing flow baselines in effective sample size and thermodynamic observable estimation, setting a new standard for Boltzmann Generators.
+                    <strong>Superior scalability</strong> — On larger molecular systems (tri-alanine, alanine tetrapeptide, and hexa-alanine), FALCON outperforms all baselines — both discrete and continuous normalizing flows — across every metric, demonstrating that its advantage grows where existing methods struggle to scale.
                 </p>
             </div>
 
